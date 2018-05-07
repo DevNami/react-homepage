@@ -1,18 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import Menu from 'components/Menu';
-import { Home, About, Posts } from 'pages';
+import { Home, Guide, Write } from 'pages';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <Menu />
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/posts" component={Posts} />
-      </div>
+      <MuiThemeProvider>
+        <Fragment>
+          <header>
+
+          </header>
+          <main>
+            <Route exact path="/" component={Home} />
+            <Route path="/guide" component={Guide} />
+            <Route path="/write" component={Write} />
+          </main>
+        </Fragment>
+      </MuiThemeProvider>
     )
   }
 };
