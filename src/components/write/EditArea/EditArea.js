@@ -12,12 +12,17 @@ const renderData = data => {
   return renderArr
 }
 
-const EditArea = ({ data, editInput }) => {
+const EditArea = ({ data, editInput, handleKeyPress }) => {
   return (
     <div className="edit-area">
       <div className="content">
-        <div className="input" contentEditable="true" ref={editInput}>
-          가나다라마바사아자차카타파하
+        <div 
+          className="input" 
+          contentEditable="true" 
+          onKeyPress={handleKeyPress}
+          ref={editInput} 
+        >
+          <p><br/></p>
         </div>
       </div>
     </div>
